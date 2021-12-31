@@ -1,0 +1,40 @@
+.home-container {
+  position: relative;
+  width: 766px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.home-title h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.home-container .list-item {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+/* 기기의 넓이가 320 이상 */
+/* 기기의 넓이가 480 이하 */
+/* 기기 화면의 최소 1px당 2개의 화소가 있어야 한다. */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .home-container .list-item {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
